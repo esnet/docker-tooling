@@ -16,3 +16,9 @@ for item in $(docker volume ls -f dangling=true -q); do
     docker volume rm $item
 done
 
+
+echo "removing all networks"
+for item in $(docker network ls -f dangling=true -q); do
+    docker network rm $item
+done
+
